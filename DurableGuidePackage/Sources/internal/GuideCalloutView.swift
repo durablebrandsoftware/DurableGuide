@@ -61,7 +61,7 @@ struct GuideCalloutView: View {
     }
     
     func minAndMaxWidths() -> (min: CGFloat, max: CGFloat) {
-        let minWidth: CGFloat = 320
+        let minWidth: CGFloat = 330
         let percentage: CGFloat = (guideDisplayState.displayFrame.width < guideDisplayState.displayFrame.width) ? 0.667 : 0.35
         let twoThirdsWidth: CGFloat = (guideDisplayState.displayFrame.width - 16) * percentage
         var maxWidth = minWidth < twoThirdsWidth ? twoThirdsWidth : minWidth
@@ -129,6 +129,8 @@ struct GuideCalloutView: View {
         
         var calloutInfo = calloutInfo
         
+        var outlineSize = guideAppearance.calloutOutlineSize
+        
         calloutInfo.calloutRect.size.width = geometry.size.width
         calloutInfo.calloutRect.size.height = geometry.size.height
         
@@ -149,12 +151,12 @@ struct GuideCalloutView: View {
         calloutInfo.arrowOffset = xOffset
         
 #if os(macOS)
-        if y < (guideDisplayState.safeArea.top + 3) {
-            y = guideDisplayState.safeArea.top + 3
+        if y < (guideDisplayState.safeArea.top + 4.0 + outlineSize/2.0) {
+            y = guideDisplayState.safeArea.top + 4.0 + outlineSize/2.0
         }
 #else
-        if y < (guideDisplayState.safeArea.top + 8) {
-            y = guideDisplayState.safeArea.top + 8
+        if y < (guideDisplayState.safeArea.top + 8.0 + outlineSize/2.0) {
+            y = guideDisplayState.safeArea.top + 8.0 + outlineSize/2.0
         }
 #endif
 
