@@ -142,6 +142,6 @@ There is a complete Xcode demo project available [**here**](https://github.com/d
 
 https://github.com/durablebrandsoftware/DurableGuideDemo
 
- See the `DemoView.swift` file for in that project details.
+ See the `DemoView.swift` file in that project for details.
 
 
