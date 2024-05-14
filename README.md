@@ -10,10 +10,19 @@ An onboarding library for easily adding **guided callout visuals** to virtually 
 * This is a **PRE-RELEASE VERSION**, not fully tested for production apps. 
 
 
+## Demo
+
+There is a complete Xcode demo project available [**here**](https://github.com/durablebrandsoftware/DurableGuideDemo) in a separate repo that you can compile and run to see how to use this package in iOS and macOS app:
+
+https://github.com/durablebrandsoftware/DurableGuideDemo
+
+ See the `DemoView.swift` file in that project for details.
+
+
 ## Installation
 This code is provided as a **Swift Package** that you can add to your Xcode project's "Package Dependencies", under your Project Settings, using the following URL:
 
-<code>https://github.com/durablebrandsoftware/DurableGuide/DurableGuidePackage</code>
+<code>https://github.com/durablebrandsoftware/DurableGuide</code>
 
 Once installed, add the following import to your Swift source files to access its features:
 
@@ -135,13 +144,4 @@ The `close(...)` function has one optional `Bool` parameter called `withDismissa
 ```
 
 And finally, callouts will be dismissed automatically for you if the view that it is attached to is removed from the view hierarchy. 
-
-## Demo
-
-There is a complete Xcode demo project available [**here**](https://github.com/durablebrandsoftware/DurableGuideDemo) that you can compile and run to see all of this and more in action:
-
-https://github.com/durablebrandsoftware/DurableGuideDemo
-
- See the `DemoView.swift` file in that project for details.
-
 
