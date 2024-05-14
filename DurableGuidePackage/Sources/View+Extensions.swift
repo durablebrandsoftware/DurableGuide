@@ -23,15 +23,15 @@ public extension View {
     
     /// Attaches a Guide Callout to the `View`, based on the given `GuideCallout`.
     func with(_ guide: GuideCallout) -> some View {
-        self.withGuideCallout(guide.id, placement: guide.placement, title: guide.title, message: guide.message) {
+        self.withGuideCallout(guide.id, placement: guide.placement, title: guide.title, message: guide.message, offset: guide.offset) {
             EmptyView() // Currently, a `customContentView` parameter is required for the `.withGuideCallout` modifier, but we're not support custom views yet. So simply passing an `EmptyView`.
         }
     }
 
     /// Internal helper modifier for attaching a callout that has a formatted `title` and `message` views. This is currently used by the public `.with(_ guide:)` modifier. We'll be cleaning this up when we support custom views.
     @ViewBuilder
-    private func withGuideCallout(_ id: String, placement: GuideCalloutPlacement = .below, title: String? = nil, message: String? = nil, @ViewBuilder customContentView: @escaping () -> some View) -> some View {
-        ViewWithCallout(id: id, placement: placement, guideContentView: {
+    private func withGuideCallout(_ id: String, placement: GuideCalloutPlacement = .below, title: String? = nil, message: String? = nil, offset: CGPoint, @ViewBuilder customContentView: @escaping () -> some View) -> some View {
+        ViewWithCallout(id: id, placement: placement, offset: offset, guideContentView: {
             VStack(alignment: .leading) {
                 GuideCalloutTextView(title: title, message: message)
                 customContentView()
@@ -44,7 +44,7 @@ public extension View {
     /// UNTESTED: Future support for showing Callouts with a completely custom content view only. We'll be cleaning this up when we support custom views.
     @ViewBuilder
     private func withGuideCallout(_ id: String, placement: GuideCalloutPlacement = .below, @ViewBuilder guideContentView: @escaping () -> some View) -> some View {
-        ViewWithCallout(id: id, placement: placement, guideContentView: guideContentView) {
+        ViewWithCallout(id: id, placement: placement, offset: CGPoint.zero, guideContentView: guideContentView) {
             self
         }
     }

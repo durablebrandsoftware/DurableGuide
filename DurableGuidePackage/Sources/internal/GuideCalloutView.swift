@@ -199,7 +199,7 @@ struct GuideCalloutView: View {
             y = guideDisplayState.safeArea.top + 8
         }
 #endif
-
+        
         calloutInfo.calloutRect.origin.x = x
         calloutInfo.calloutRect.origin.y = y
 
@@ -220,6 +220,7 @@ struct GuideCalloutInfo: Equatable {
     var id: String
     var sourceViewRect: CGRect = CGRect.zero
     var placement: GuideCalloutPlacement = .below
+    var offset: CGPoint = CGPoint.zero
     
     var view: AnyView
     var calloutRect: CGRect = CGRect.zero

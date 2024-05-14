@@ -15,6 +15,7 @@ struct ViewWithCallout<OriginalView: View, GuideContentView: View>: View {
 
     let id: String
     let placement: GuideCalloutPlacement
+    let offset: CGPoint
     @ViewBuilder let guideContentView: () -> GuideContentView
     @ViewBuilder let originalView: OriginalView
     
@@ -36,9 +37,12 @@ struct ViewWithCallout<OriginalView: View, GuideContentView: View>: View {
     
     @ViewBuilder
     public func generateClearBackground(withGeometry geometry: GeometryProxy) -> some View {
-        let frame = geometry.frame(in: .global)
+        var frame = geometry.frame(in: .global)
+        frame.origin.x += offset.x
+        frame.origin.y += offset.y
         var guide = GuideCallout.list[id] ?? GuideCalloutInfo(id: id, view: AnyView(guideContentView()))
         guide.placement = placement
+        guide.offset = offset
         guide.sourceViewRect = frame
         GuideCallout.list[id] = guide
 
