@@ -138,6 +138,10 @@ And finally, callouts will be dismissed automatically for you if the view that i
 
 ## Demo
 
-There is a complete Xcode demo project (`Demo.xcodeproj`) included in this repo that you can compile and run to see all of this and more in action. See the `DemoView.swift` file for details.
+There is a complete Xcode demo project available [**here**](https://github.com/durablebrandsoftware/DurableGuideDemo) that you can compile and run to see all of this and more in action:
+
+https://github.com/durablebrandsoftware/DurableGuideDemo
+
+ See the `DemoView.swift` file for in that project details.
 
 
