@@ -12,7 +12,7 @@ An onboarding library for easily adding **guided callout visuals** to virtually 
 
 ## Demo
 
-There is a complete Xcode demo project available [**here**](https://github.com/durablebrandsoftware/DurableGuideDemo) in a separate repo that you can compile and run to see how to use this package in iOS and macOS app:
+There is a complete Xcode demo project available [**here**](https://github.com/durablebrandsoftware/DurableGuideDemo) in a separate repo that you can compile and run to see how to use this package in iOS and macOS apps:
 
 https://github.com/durablebrandsoftware/DurableGuideDemo
 
